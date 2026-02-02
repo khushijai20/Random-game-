@@ -176,11 +176,12 @@ with st.container():
     
     if not st.session_state.game_over:
         # Input for guess
+        default_val = (st.session_state.lower_bound + st.session_state.upper_bound) // 2
         guess = st.number_input(
             "Enter your guess:",
             min_value=st.session_state.lower_bound,
             max_value=st.session_state.upper_bound,
-            value=50,
+            value=default_val,
             step=1,
             key="guess_input"
         )
